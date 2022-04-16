@@ -1,6 +1,6 @@
 import React from "react";
 import banner from "../images/banner.png";
-import Services from "./Sevices";
+import Services from "./Services";
 const Home = () => {
   return (
     <div>

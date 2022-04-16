@@ -4,6 +4,8 @@ const Login = () => {
   return (
     <div>
       <h1>welcome to login</h1>
+      <label>Email</label>
+      <input type="Email" placeholder="your email" />
     </div>
   );
 };

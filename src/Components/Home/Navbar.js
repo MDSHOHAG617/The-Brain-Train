@@ -28,21 +28,24 @@ const Navbar = () => {
         <img className="w-[30px] mr-10 h-8 " src={img} alt="" />
       </div>
       <div className="flex ">
-        <CustomLink className="p-4 text-xl font-medium" to="/">
+        <CustomLink className="p-3 text-xl font-medium" to="/">
           Home
         </CustomLink>
-        <CustomLink className="p-4 text-xl font-medium" to="/blogs">
+        <CustomLink className="p-3 text-xl font-medium" to="/blogs">
           Blogs
         </CustomLink>
-        <CustomLink className="p-4 text-xl font-medium" to="/about">
+        <CustomLink className="p-3 text-xl font-medium" to="/about">
           About
+        </CustomLink>
+        <CustomLink className="p-3 text-xl font-medium" to="/checkout">
+          Checkout
         </CustomLink>
       </div>
       <div className="flex">
-        <CustomLink className="p-4 text-xl font-medium" to="/registration">
+        <CustomLink className="p-3 text-xl font-medium" to="/registration">
           Registration
         </CustomLink>
-        <CustomLink className="p-4 mr-14 text-xl font-medium" to="/login">
+        <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
           Login
         </CustomLink>
       </div>
