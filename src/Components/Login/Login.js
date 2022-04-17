@@ -24,6 +24,7 @@ const Login = () => {
     const validEmail = emailRegex.test(event.target.value);
     if (validEmail) {
       setEmail(event.target.value);
+      setError("");
     } else {
       setError("invalid Email !");
     }
@@ -34,6 +35,7 @@ const Login = () => {
     const validPassword = passwordRegex.test(event.target.value);
     if (validPassword) {
       setPassword(event.target.value);
+      setError("");
     } else {
       setError("At least one special character");
     }
