@@ -54,8 +54,11 @@ const Navbar = () => {
         </CustomLink>
         {user ? (
           <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
-            <button onClick={handleSignOut} className="btn">
-              logout
+            <button
+              onClick={handleSignOut}
+              className="rounded-full px-2  font-medium hover:bg-red-400"
+            >
+              Logout
             </button>
           </CustomLink>
         ) : (
