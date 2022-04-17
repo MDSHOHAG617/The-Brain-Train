@@ -7,32 +7,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import invalidIcon from "../images/invalid.webp";
 
 const Login = () => {
+  const auth = getAuth(app);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const auth = getAuth(app);
   const [signInWithEmailAndPassword, user, loading, hookError] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
-  if (hookError) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
-
   if (user) {
     navigate(from, { replace: true });
   }
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   const handleEmail = (event) => {
     const emailRegex = /\S+@\S+\.\S+/;
     const validEmail = emailRegex.test(event.target.value);
@@ -52,11 +38,6 @@ const Login = () => {
       setError("At least one special character");
     }
   };
-
-  // const handleLoginBtn = (event) => {
-  //   event.preventDefault();
-  //   signInWithEmailAndPassword(email, password);
-  // };
   const handleLogIn = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
@@ -103,7 +84,12 @@ const Login = () => {
         {error && (
           <div>
             <img className="w-8 mx-auto m-1" src={invalidIcon} alt="" />
-            <p className="text-red-500 font-medium font-bold">{error}</p>
+            <p className="text-red-500  font-bold">{error}</p>
+          </div>
+        )}
+        {hookError && (
+          <div>
+            <p className="text-red-500  font-bold">{hookError?.message}</p>
           </div>
         )}
       </form>
