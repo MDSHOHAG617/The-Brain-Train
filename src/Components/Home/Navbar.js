@@ -1,11 +1,17 @@
+import { getAuth } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import app from "../../firebase.init";
 import img from "../images/icons8-tutor-64.png";
 
 const Navbar = () => {
+  const auth = getAuth(app);
+  const [user, loading, error] = useAuthState(auth);
   function CustomLink({ children, to, ...props }) {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
+    const handleSignOut = () => {};
 
     return (
       <div>
@@ -45,9 +51,15 @@ const Navbar = () => {
         <CustomLink className="p-3 text-xl font-medium" to="/registration">
           Registration
         </CustomLink>
-        <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
-          Login
-        </CustomLink>
+        {user ? (
+          <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
+            Logout
+          </CustomLink>
+        ) : (
+          <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
+            Login
+          </CustomLink>
+        )}
       </div>
     </div>
   );

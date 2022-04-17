@@ -8,6 +8,7 @@ import Blogs from "../src/Components/Blogs/Blogs";
 import About from "../src/Components/About/About";
 import Registration from "../src/Components/Registration/Registration";
 import Checkout from "./Components/Checkout/Checkout";
+import RequiredAuth from "./Components/RequiredAuth/RequiredAuth";
 
 function App() {
   return (
@@ -22,7 +23,14 @@ function App() {
           path="/registration"
           element={<Registration></Registration>}
         ></Route>
-        <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+        <Route
+          path="/checkout"
+          element={
+            <RequiredAuth>
+              <Checkout></Checkout>
+            </RequiredAuth>
+          }
+        ></Route>
 
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
