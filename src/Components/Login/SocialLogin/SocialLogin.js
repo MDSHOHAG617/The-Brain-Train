@@ -1,6 +1,7 @@
 import { getAuth } from "firebase/auth";
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import app from "../../../firebase.init";
 import icon from "../../images/googleIcon.webp";
 
@@ -10,6 +11,13 @@ const SocialLogin = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle();
   };
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
@@ -7,12 +7,13 @@ import img from "../images/icons8-tutor-64.png";
 
 const Navbar = () => {
   const auth = getAuth(app);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   const [user, loading, error] = useAuthState(auth);
   function CustomLink({ children, to, ...props }) {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
-    const handleSignOut = () => {};
-
     return (
       <div>
         <Link
@@ -53,7 +54,9 @@ const Navbar = () => {
         </CustomLink>
         {user ? (
           <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
-            Logout
+            <button onClick={handleSignOut} className="btn">
+              logout
+            </button>
           </CustomLink>
         ) : (
           <CustomLink className="p-3 mr-14 text-xl font-medium" to="/login">
