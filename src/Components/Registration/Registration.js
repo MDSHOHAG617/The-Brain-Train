@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import app from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendEmailVerification } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import invalidIcon from "../images/invalid.webp";
 import SocialLogin from "../Login/SocialLogin/SocialLogin";
@@ -13,7 +13,9 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [createUserWithEmailAndPassword, user, hookError] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  //Replace by using navigate & location
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";

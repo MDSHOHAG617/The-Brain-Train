@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import app from "../../firebase.init";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import invalidIcon from "../images/invalid.webp";
 
@@ -29,7 +29,6 @@ const Login = () => {
       setError("invalid Email !");
     }
   };
-
   const handlePassword = (event) => {
     const passwordRegex = /(?=.*?[#?!@$%^&*-])/;
     const validPassword = passwordRegex.test(event.target.value);
@@ -40,6 +39,18 @@ const Login = () => {
       setError("At least one special character");
     }
   };
+
+  //handle password reset
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert("Email sent!");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
   const handleLogIn = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
@@ -78,7 +89,13 @@ const Login = () => {
             Please Register
           </Link>{" "}
         </p>
-
+        <button
+          onClick={handlePasswordReset}
+          className="text-red-500 font-mono p-2"
+        >
+          Forget Password?
+        </button>
+        <br />
         <button className="rounded border-2 p-2 font-medium m-2 w-80 hover:bg-white hover:text-blue-600">
           Login
         </button>
