@@ -4,7 +4,7 @@ import app from "../../firebase.init";
 // import getAuth from "firebase/auth";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,6 +37,7 @@ const Login = () => {
   return (
     <div className="">
       <form className="bg-sky-200 p-5">
+        <h1 className="text-xl font-medium p-2">Please Login</h1>
         <input
           className="rounded border-none p-2 m-2 w-80"
           onChange={handleEmail}
@@ -57,6 +58,16 @@ const Login = () => {
           placeholder="password"
         />
         <br />
+        <p className="p-1 font-semibold text-sm ">
+          New to Brain The Train?{" "}
+          <Link
+            to="/registration"
+            className="p-2 text-blue-700 hover:text-red-600"
+          >
+            Please Register
+          </Link>{" "}
+        </p>
+
         <button
           onClick={handleLoginBtn}
           className="rounded border-2 p-2 font-medium m-2 w-80 hover:bg-white hover:text-blue-600"
