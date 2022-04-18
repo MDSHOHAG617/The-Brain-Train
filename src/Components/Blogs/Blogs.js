@@ -30,12 +30,15 @@ const Blogs = () => {
             implement authentication?
           </h1>
           <p className="border-2 rounded border-slate-300 my-3 p-2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            quia provident modi odit minima, quaerat non veritatis quod. Hic
-            numquam eaque quod! Et accusantium minima voluptatem ea facere quasi
-            earum, ipsam dignissimos. Nisi iure, nostrum illum ea ad architecto
-            veniam voluptatibus aut culpa neque, nemo adipisci eveniet. Maxime,
-            veritatis nobis.
+            I am using firebase for authentication and hosting now, in future if
+            i find something special compare to firebase than i will definitely
+            use that one. Firebase gives us to authenticate user like, email
+            with password, github , facebook, google etc. And also we can easily
+            hosting a website by using firebase.There are some seasons for look
+            for firebase alternatives, firebase isn't open source, not all
+            services are free, only support google cloud hosting etc.. here are
+            many alternatives to firebase like: Back4App, Parse, AWS Amplify,
+            Backendless, Kuzzle, Supabase, appwrite, Hasura, Nhost, Dployd etc
           </p>
         </div>
         <div className="Q-card bg-sky-100 p-4 rounded border-2 border-sky-400">
@@ -43,12 +46,16 @@ const Blogs = () => {
             What other services does firebase provide other than authentication
           </h1>
           <p className="border-2 rounded border-slate-300 my-3 p-2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            quia provident modi odit minima, quaerat non veritatis quod. Hic
-            numquam eaque quod! Et accusantium minima voluptatem ea facere quasi
-            earum, ipsam dignissimos. Nisi iure, nostrum illum ea ad architecto
-            veniam voluptatibus aut culpa neque, nemo adipisci eveniet. Maxime,
-            veritatis nobis.
+            Firebase enables developers to develop iOS, Android and Web apps.
+            Firebase offers many services without Authentication like:
+            Analytics,Which is free from firebase. Cloud massaging, it is also
+            free for user or a companies, it is a cross platform. Realtime
+            Database, its very use full services it's helps a lot, even after
+            the is apps is offline that time it will work properly at Realtime.
+            Crashlytics, its also a realtime service provider it's help
+            developer to notify if anything wrong in the app. Performance, it
+            notify performance based thing where when you should improves your
+            apps. Test lab, it's a cloud based app testing infrastructure.
           </p>
         </div>
       </div>
