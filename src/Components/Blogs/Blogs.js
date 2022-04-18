@@ -3,7 +3,6 @@ import React from "react";
 const Blogs = () => {
   return (
     <div>
-      <h1 className={"mt-8 text-4xl font-semibold"}>welcome to blogs</h1>
       <div className="cards grid grid-cols-3 gap-5 m-8">
         {" "}
         <div className="Q-card bg-sky-100 p-4 rounded border-2 border-sky-400">
