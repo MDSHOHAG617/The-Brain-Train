@@ -12,7 +12,7 @@ const Registration = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [createUserWithEmailAndPassword, user, hookError] =
+  const [createUserWithEmailAndPassword, user, loading, hookError] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   //Replace by using navigate & location
