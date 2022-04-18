@@ -27,9 +27,9 @@ const Navbar = () => {
     );
   }
   return (
-    <div className="lg:block xl:flex sm:flex justify-center p-5 bg-lime-200">
+    <div className="lg:block xl:flex sm:flex justify-center p-5 bg-gradient-to-r from-green-400 to-blue-500 text-white">
       <div className="flex mx-auto">
-        <h2 className=" text-3xl mr-6   font-medium align-middle text-slate-700">
+        <h2 className=" text-3xl mr-6   font-medium align-middle text-slate-900">
           The Brain Train
         </h2>
         <img className="w-[30px] mr-10 h-8 " src={img} alt="" />

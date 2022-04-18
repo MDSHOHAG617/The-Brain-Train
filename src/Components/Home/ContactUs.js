@@ -13,7 +13,7 @@ const ContactUs = () => {
             <p className="text-xl font-light">
               Our staff can help you with the process of becoming a tutor{" "}
             </p>
-            <button className="p-2 bg-red-400 rounded-full text-white m-2 hover:bg-lime-200 hover:text-black">
+            <button className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-400 hover:to-yellow-300 rounded-full text-white m-2  ">
               SET AN INTERVIEW
             </button>
           </div>

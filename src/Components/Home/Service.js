@@ -18,7 +18,7 @@ const Service = ({ service }) => {
         <p className="font-light"> {description}</p>
         <button
           onClick={handleCheckout}
-          className=" px-3 py-2 text-lg font-semibold hover:bg-lime-300 hover:text-black text-white bg-red-400  rounded-full my-4"
+          className=" px-3 text-white py-2 text-lg font-semibold bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-400 hover:to-yellow-300   rounded-full my-4"
         >
           checkout
         </button>
