@@ -1,11 +1,10 @@
 import React from "react";
 import backgroundImage from "../images/contactbg.jpg";
 
-import "./Contact.css";
-
 const ContactUs = () => {
   return (
     <div>
+      <h1 className="text-4xl font-medium mt-10 text-slate-600">Contact Us</h1>
       <div className="my-10 bg-sky-100 ">
         <div className="">
           <div className="py-10">

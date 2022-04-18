@@ -5,6 +5,8 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import invalidIcon from "../images/invalid.webp";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const auth = getAuth(app);
@@ -44,10 +46,10 @@ const Login = () => {
   const handlePasswordReset = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("Email sent!");
+        toast("Email sent!");
       })
       .catch((err) => {
-        alert(err.message);
+        toast(err.message);
       });
   };
 
@@ -113,6 +115,7 @@ const Login = () => {
         )}
       </form>
       <SocialLogin></SocialLogin>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

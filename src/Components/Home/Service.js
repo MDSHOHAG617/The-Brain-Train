@@ -10,15 +10,15 @@ const Service = ({ service }) => {
   };
 
   return (
-    <div className="my-8 m border rounded bg-slate-100  ">
+    <div className="my-8 m border rounded bg-sky-100  ">
       <div className="p-8">
         <img className=" my-4 mx-auto w-40 rounded-full " src={image} alt="" />
-        <h3>Name: {Name}</h3>
-        <p>Price: {Price}</p>
-        <p>Description: {description}</p>
+        <h3 className="text-xl font-bold"> {Name}</h3>
+        <p className="text-lg font-mono ">Price: {Price}</p>
+        <p className="font-light"> {description}</p>
         <button
           onClick={handleCheckout}
-          className="p-2 bg-red-500 rounded my-4"
+          className=" px-3 py-2 text-lg font-semibold hover:bg-lime-300 hover:text-black text-white bg-red-400  rounded-full my-4"
         >
           checkout
         </button>
